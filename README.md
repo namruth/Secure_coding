@@ -10,4 +10,4 @@ This repository contains the vulnerable codebase for the Secure Coding Lab. Plea
 - Make sure to include the output recvieved after running the script in your report.
   
 ---
-                                        ## All The Best!!!!
+                                      
