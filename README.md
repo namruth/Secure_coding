@@ -6,7 +6,7 @@ This repository contains the vulnerable codebase for the Secure Coding Lab. Plea
 ## Points to be Noted:
 
 - The code base is written in C.
-- randomizer.py script should be run to figure out the programs assigned to each student (10 programs).
+- randomizer.py script should be run to figure out the programs assigned to each student (9 programs).
 - Make sure to include the output recvieved after running the script in your report.
   
 ---
