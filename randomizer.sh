@@ -1,6 +1,6 @@
 #!/bin/bash
-
-sc1=$(( $1 % 15))
+nuid=10#$1
+sc1=$(( $nuid % 15))
 sc1=$(( 2 * $sc1))
 echo "Thanks $2 your 10 programs to work with  are:"
 for (( c=1; c<=10; c++ ))
