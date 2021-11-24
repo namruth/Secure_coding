@@ -1,6 +1,6 @@
 # Secure Coding Lab and Static Analysis using LLVM Clang Static Analyzer
 
-This repository contains the vulnerable codebase for the Secure Coding Lab. Please clone this repository and proceed further with the lab.
+This repository contains the vulnerable codebase for the Secure Coding Project. Please clone this repository and proceed further with the project.
 ---
 
 ## Points to be Noted:
