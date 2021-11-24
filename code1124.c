@@ -1,5 +1,3 @@
-
-
 // Use C-Lang Static Analyzer to analyze and fix the bugs
 // Also review the output generated to find any bugs that the static analyzer misses.
 // Hint this code has 2-3 bugs that can be identified using static analyzer, 2 Tasks will have to be completed 
