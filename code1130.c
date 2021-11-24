@@ -1,4 +1,4 @@
-/* ----->>>> Designed for CLANG Static Analysis and Vulnerabilites Lab for CY5130 --->>>>>*/
+
 
 // Use C-Lang Static Analyzer to analyze and fix the bugs
 // Hint this code has bugs that can be identified using static analyzer
