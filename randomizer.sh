@@ -9,9 +9,9 @@ do
         code=$(($(($sc1 + $increment)) % 32))
         if [[ $code -lt 10 ]]
         then
-        echo "$c. code110$code.c"
+        echo "$c. codeN110$code.c"
         else
-        echo "$c. code11$code.c"
+        echo "$c. codeN11$code.c"
         fi
 done
 
