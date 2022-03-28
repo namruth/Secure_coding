@@ -7,7 +7,7 @@ This repository contains the vulnerable codebase for the Secure Coding Project. 
 
 - The code base is written in C.
 - randomizer.sh script should be run to figure out the programs assigned to each student (9 programs).
-- Make sure to include the output recvieved after running the script in your report.
+- Make sure to include the revised output after running the script in your report.
   
 ---
                                       
