@@ -1,4 +1,20 @@
 #!/bin/bash
+if [[ $1 =~ ^00[0-9]{7}$ ]]
+then
+  echo "NUID valid"
+else
+  echo "NUID invalid, exitting the program"
+  exit 0
+fi
+
+if [[ $2 =~ ^[a-z]+\.[a-z0-9]+@northeastern.edu$ ]]
+then
+  echo "NU email valid"
+else
+  echo "NU email invalid, exitting the program"
+  exit 0
+fi
+
 nuid=$((10#$1))
 sc1=$(( $nuid % 15))
 sc1=$(( 2 * $sc1))
@@ -14,4 +30,3 @@ do
         echo "$c. codeN11$code.c"
         fi
 done
-
