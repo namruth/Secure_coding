@@ -7,7 +7,7 @@ else
   exit 0
 fi
 
-if [[ $2 =~ ^[a-z]+\.[a-z0-9]+@northeastern.edu$ ]]
+if [[ $2 =~ ^[A-Za-z]+\.[A-Za-z0-9]+@northeastern.edu$ ]]
 then
   echo "NU email valid"
 else

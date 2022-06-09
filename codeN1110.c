@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_PASSWORD_LEN 9
+#define MAX_PASSWORD_LEN 20
+#define MAX_USERNAME_LEN 20
 
 struct User {
-    char username[50];
+    char username[MAX_USERNAME_LEN];
     char password[MAX_PASSWORD_LEN];
     int uid;
 };
@@ -23,30 +24,32 @@ char *encrypt(char *toEncrypt, int size) {
     for (i = 0; i < size; i++)
         toEncrypt[i] ^= secret[i];
 
+    printf("toEncrypt: %s\n",toEncrypt);
     return toEncrypt;
+
 }
 
 char *decrypt(char *toDecrypt, int size) {
     int i;
     for (i = 0; i < size; i++)
         toDecrypt[i] ^= secret[i];
+    //printf("toDecrypt: %s\n",toDecrypt);
     return toDecrypt;
 
 }
 
 int checkValidUserName(char *username) {
     for (int i = 0; i < 3; i++) {
-        if (strcmp(username, usersDb[i].username) == 0) {
+        if (strncmp(username, usersDb[i].username,MAX_USERNAME_LEN) == 0) {
             return 1;
         }
     }
     return 0;
 }
 
-int checkValidPassword(char *username, char *password) {
+int checkValidPassword(char *password) {
     for (int i = 0; i < 3; i++) {
-        if (strcmp(username, usersDb[i].username) == 0 &&
-            strcmp(password, decrypt(usersDb[i].password, strlen(usersDb[i].password))) == 0) {
+        if (strncmp(password, decrypt(usersDb[i].password, strlen(usersDb[i].password)), MAX_PASSWORD_LEN) == 0) {
             return 1;
         }
     }
@@ -56,25 +59,28 @@ int checkValidPassword(char *username, char *password) {
 
 int checkCredentials(char *username, char *password) {
     if (checkValidUserName(username)) {
-        if (checkValidPassword(username, password)) {
-            printf("Welcome %s", username);
+        if (checkValidPassword(password)) {
+            printf("Welcome %s\n", username);
             return 1;
         } else {
-            printf("%s", "Password is invalid");
+            printf("%s", "Password is invalid\n");
             return 0;
         }
     } else {
-        printf("%s", "Username is invalid");
+        printf("%s", "Username is invalid\n");
     }
     return 1;
 }
 
 int main(int argc, char **argv) {
-    char username[20];
-    char password[20];
+    char username[MAX_USERNAME_LEN];
+    char password[MAX_PASSWORD_LEN];
     printf("Enter username:");
     scanf("%19s", username);
-    printf("Enter password");
+    printf("Enter password:");
     scanf("%19s", password);
     checkCredentials(username, password);
 }
+
+// strcmp(password, decrypt(usersDb[i].password, strlen(usersDb[i].password))) == 0) {
+// strncmp(password, usersDb[i].password, MAX_PASSWORD_LEN) == 0) {

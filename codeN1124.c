@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv) {
 
-    int *px;
+    int *px = (int*)malloc(sizeof(argc));
     float foo;
 
     if (px) {
@@ -14,7 +14,6 @@ int main(int argc, char **argv) {
             printf("%6.1f", foo);
         } else {
             printf("%6.1f", 100.00 / *px);
-            free(px);
         }
         free(px);
     }

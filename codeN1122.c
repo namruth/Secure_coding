@@ -8,7 +8,7 @@ void buildMatrix(unsigned int matrix_size) {
     for (int i = 0; i < matrix_size; ++i) {
         square[i] = calloc(matrix_size, sizeof(char));
     }
-    system("cls");
+    system("clear");
     printf("\tMatrix\n");
 
     for (int i = 0; i < matrix_size; i++) {
@@ -18,6 +18,8 @@ void buildMatrix(unsigned int matrix_size) {
             printf("  %d  |", i + j);
         }
     }
+    printf("\n");
+    free(square);
 }
 
 int main() {

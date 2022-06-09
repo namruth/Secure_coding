@@ -9,22 +9,22 @@
 
 // custom method to reverse a number (without using third variable/pointer) passed to it as arguments from main()
 void reverse_number(int *ptr1, char* ptr2){
+    if (!ptr1 || !ptr2){
+      printf("One of the pointers passed is NULL\n");
+      return;
+    }
     int reverse = 0; //will be used as reversing variable.
+    int remainder = 0;
     printf("Original First Number is : %d \n ", (*ptr1));
     printf("Choice is : %c \n ", (*ptr2));
 
-    // ----------------------- Secure Coding Task -------------------------------////
-    // Task 1: Implement a NULL pointer check condition (use if statment) (most important secure coding practice)
-
-    // ------  add null pointer check condition for ptr1 Here-------
-
-    if(*ptr2 == 'Y' && ptr2 != NULL)
+    if(*ptr2 == 'Y')
     {
-        //Task 2 : complete logic for reversing a number (Hint: required statements 2)
-        //----- add logic here ------
         while(*ptr1 > 0)
         {
-            //add reversing logic here using ptr1 (which points to the first_number defined in main)
+          remainder = *ptr1%10;
+          reverse = reverse*10 + remainder;
+          *ptr1 /= 10;
         }
         *ptr1=reverse;
         //print statements
@@ -39,13 +39,11 @@ void reverse_number(int *ptr1, char* ptr2){
 
 int main(){
     // variable initializations
-    int first_number;
+    int first_number = 12345;
     char choice = 'Y';
 
-    //Note for developers(students): use variables in method using defined pointers (not directly)
-
-    int* ptr_to_first_number = NULL;
-    char *ptr_to_char = NULL;
+    int* ptr_to_first_number = &first_number;
+    char *ptr_to_char = &choice;
     // Hint:: add and assign the references to the pointers here:
 
 

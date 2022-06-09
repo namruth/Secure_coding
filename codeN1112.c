@@ -9,7 +9,7 @@
 
 // custom method to print digits from 11 to value of size in main().
 void method(int *rtp, int *rtp1) {
-    int count;
+    int count = 0;
     for (int i = 0; i < (*rtp1); i++) {
         printf("Numbers are: %d \n", (*rtp + count));
         count++;
@@ -20,7 +20,7 @@ void method(int *rtp, int *rtp1) {
 // custom method to fill an array with numbers till valid defined "macro' size
 void memory_filler(int arr[]) {
     int inc = 0;
-    for (int k = 0; k < 30; k++) {
+    for (int k = 0; k < ARRAY_MEMORY_SIZE; k++) {
         arr[k] = inc;
         inc += 1;
         printf("Array element is: %d \n", arr[k]);
@@ -38,8 +38,8 @@ int main() {
 
     //Note for developers: use as size in method using defined pointers (not directly)
 
-    int *ptr_to_first_number = NULL;
-    int *ptr_to_size = NULL;
+    int *ptr_to_first_number = &first_number;
+    int *ptr_to_size = &size;
     // Hint:: add the assign the references to the pointers here:
 
 

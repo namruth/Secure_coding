@@ -18,7 +18,7 @@ int main() {
 
     struct SoccerTeam teams[] = {arsenalFC, barcelonaFC, parisSG};
     long maxRevenue = 0;
-    char *maxRevenueTeam;
+    char *maxRevenueTeam = NULL;
     for (int i = 0; i < 3; i++) {
         long totalRevenue = calculateSoccerRevenue(teams[i].revenueOverall, teams[i].revenueThisYear);
         printf("%s: %ld\n", teams[i].name, totalRevenue);
@@ -27,6 +27,8 @@ int main() {
             maxRevenueTeam = teams[i].name;
         }
     }
-    printf("Team with max revenue (%ld) is: %s\n", maxRevenue, maxRevenueTeam);
+    if (maxRevenue && maxRevenueTeam)
+        printf("Team with max revenue (%ld) is: %s\n", maxRevenue, maxRevenueTeam);
+
     return (0);
 }
